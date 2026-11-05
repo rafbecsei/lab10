@@ -73,3 +73,9 @@ def test_chamar_fila_vazia():
 
     with pytest.raises(IndexError):
         fila.chamar()
+
+def test_tipo_invalido():
+    fila = Fila()
+
+    with pytest.raises(ValueError):
+        fila.emitir("vip")
