@@ -1,2 +1,5 @@
 def contar_palavras(texto):
-    return {}
+    if not texto:
+        return {}
+
+    return {texto: 1}
