@@ -111,3 +111,10 @@ def test_mensagem_exata_quantidade_invalida():
         Carrinho().adicionar(2500, quantidade=0)
 
     assert str(erro.value) == "quantidade deve ser inteira e maior ou igual a 1"
+
+
+def test_mensagem_exata_cupom_desconhecido():
+    with pytest.raises(ValueError) as erro:
+        Carrinho().aplicar_cupom("XYZ")
+
+    assert str(erro.value) == "cupom desconhecido"
