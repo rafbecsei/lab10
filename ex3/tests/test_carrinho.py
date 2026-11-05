@@ -95,3 +95,7 @@ def test_preco_minimo_valido():
     c = Carrinho()
     c.adicionar(1)
     assert c.total == 1
+
+def test_mensagem_preco_invalido():
+    with pytest.raises(ValueError, match="preco deve ser positivo"):
+        Carrinho().adicionar(0)
