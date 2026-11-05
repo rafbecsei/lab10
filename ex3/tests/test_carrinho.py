@@ -40,3 +40,9 @@ def test_cupom_dez_no_valor_minimo():
     c.adicionar(10000)
     c.aplicar_cupom("DEZ")
     assert c.total == 9000
+
+def test_cupom_vinte_no_valor_minimo():
+    c = Carrinho()
+    c.adicionar(30000)
+    c.aplicar_cupom("VINTE")
+    assert c.total == 24000
