@@ -32,3 +32,11 @@ def test_numeracao_independente():
     assert fila.emitir("normal") == "N2"
     assert fila.emitir("prioridade") == "P2"
     assert fila.aguardando == 4
+
+def test_chamar_senha_normal():
+    fila = Fila()
+
+    fila.emitir("normal")
+
+    assert fila.chamar() == "N1"
+    assert fila.aguardando == 0
