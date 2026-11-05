@@ -5,6 +5,7 @@ class Fila:
         self.numero_prioridade = 0
         self.fila_normal = []
         self.fila_prioridade = []
+        self.prioridades_consecutivas = 0
 
     def emitir(self, tipo):
         if tipo == "prioridade":
@@ -20,10 +21,17 @@ class Fila:
         return senha
 
     def chamar(self):
-        if self.fila_prioridade:
+        if self.fila_normal and self.prioridades_consecutivas >= 2:
+            senha = self.fila_normal.pop(0)
+            self.prioridades_consecutivas = 0
+
+        elif self.fila_prioridade:
             senha = self.fila_prioridade.pop(0)
+            self.prioridades_consecutivas += 1
+
         else:
             senha = self.fila_normal.pop(0)
+            self.prioridades_consecutivas = 0
 
         self.aguardando -= 1
         return senha
