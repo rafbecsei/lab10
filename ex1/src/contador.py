@@ -6,6 +6,7 @@ def contar_palavras(texto):
     resultado = {}
 
     for palavra in palavras:
+        palavra = palavra.lower()
         resultado[palavra] = resultado.get(palavra, 0) + 1
 
     return resultado
