@@ -8,6 +8,9 @@ class Fila:
         self.prioridades_consecutivas = 0
 
     def emitir(self, tipo):
+        if tipo not in ("normal", "prioridade"):
+            raise ValueError("Tipo de senha inválido")
+
         if tipo == "prioridade":
             self.numero_prioridade += 1
             senha = f"P{self.numero_prioridade}"
