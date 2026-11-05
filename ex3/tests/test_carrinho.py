@@ -99,3 +99,9 @@ def test_preco_minimo_valido():
 def test_mensagem_preco_invalido():
     with pytest.raises(ValueError, match="preco deve ser positivo"):
         Carrinho().adicionar(0)
+
+def test_mensagem_exata_preco_invalido():
+    with pytest.raises(ValueError) as erro:
+        Carrinho().adicionar(0)
+
+    assert str(erro.value) == "preco deve ser positivo"
