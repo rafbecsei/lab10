@@ -90,3 +90,8 @@ def test_quantidade_decimal_rejeitada():
 
     with pytest.raises(ValueError):
         c.adicionar(2500, quantidade=1.5)
+
+def test_preco_minimo_valido():
+    c = Carrinho()
+    c.adicionar(1)
+    assert c.total == 1
