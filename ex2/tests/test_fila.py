@@ -50,3 +50,17 @@ def test_prioridade_antes_da_normal():
     assert fila.chamar() == "P1"
     assert fila.chamar() == "N1"
     assert fila.aguardando == 0
+
+def test_normal_apos_duas_prioridades():
+    fila = Fila()
+
+    fila.emitir("normal")
+    fila.emitir("prioridade")
+    fila.emitir("prioridade")
+    fila.emitir("prioridade")
+
+    assert fila.chamar() == "P1"
+    assert fila.chamar() == "P2"
+    assert fila.chamar() == "N1"
+    assert fila.chamar() == "P3"
+    assert fila.aguardando == 0
