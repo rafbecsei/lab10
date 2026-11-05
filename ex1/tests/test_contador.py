@@ -16,3 +16,6 @@ def test_palavras_repetidas():
 
 def test_maiusculas_minusculas():
     assert contar_palavras("Dia dia DIA") == {"dia": 3}
+
+def test_pontuacao_final():
+    assert contar_palavras("fim. Fim!") == {"fim": 2}
