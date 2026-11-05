@@ -1,4 +1,4 @@
-CUPONS = {"DEZ": 10}
+CUPONS = {"DEZ": 10, "VINTE": 20}
 
 
 class Carrinho:
@@ -18,6 +18,10 @@ class Carrinho:
 
     @property
     def total(self):
-        if self._subtotal < 10000:
+        if self._desconto == 20:
+            if self._subtotal < 30000:
+                return self._subtotal
+        elif self._subtotal < 10000:
             return self._subtotal
+
         return self._subtotal * (100 - self._desconto) // 100
