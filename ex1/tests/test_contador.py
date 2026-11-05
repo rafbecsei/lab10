@@ -13,3 +13,6 @@ def test_duas_palavras():
 
 def test_palavras_repetidas():
     assert contar_palavras("dia a dia") == {"dia": 2, "a": 1}
+
+def test_maiusculas_minusculas():
+    assert contar_palavras("Dia dia DIA") == {"dia": 3}
