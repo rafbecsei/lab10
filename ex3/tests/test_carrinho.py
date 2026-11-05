@@ -72,3 +72,9 @@ def test_segundo_cupom_substitui_primeiro():
 
     c.aplicar_cupom("VINTE")
     assert c.total == 24000
+
+def test_quantidade_zero_rejeitada():
+    c = Carrinho()
+
+    with pytest.raises(ValueError):
+        c.adicionar(2500, quantidade=0)
