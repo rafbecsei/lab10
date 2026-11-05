@@ -78,3 +78,9 @@ def test_quantidade_zero_rejeitada():
 
     with pytest.raises(ValueError):
         c.adicionar(2500, quantidade=0)
+
+def test_quantidade_negativa_rejeitada():
+    c = Carrinho()
+
+    with pytest.raises(ValueError):
+        c.adicionar(2500, quantidade=-1)
