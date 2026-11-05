@@ -25,6 +25,9 @@ def test_espacos_multiplos():
 
 def test_quebra_de_linha():
     assert contar_palavras("bom\ndia") == {"bom": 1, "dia": 1}
-    
+
 def test_palavra_com_hifen():
     assert contar_palavras("guarda-chuva") == {"guarda-chuva": 1}
+
+def test_apenas_pontuacao():
+    assert contar_palavras("... !") == {}
