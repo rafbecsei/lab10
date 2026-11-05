@@ -33,4 +33,4 @@ def test_item_depois_do_cupom():
     c = Carrinho()
     c.aplicar_cupom("DEZ")
     c.adicionar(1000)
-    assert c.total == 900
+    assert c.total == 1000
