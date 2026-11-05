@@ -105,3 +105,9 @@ def test_mensagem_exata_preco_invalido():
         Carrinho().adicionar(0)
 
     assert str(erro.value) == "preco deve ser positivo"
+
+def test_mensagem_exata_quantidade_invalida():
+    with pytest.raises(ValueError) as erro:
+        Carrinho().adicionar(2500, quantidade=0)
+
+    assert str(erro.value) == "quantidade deve ser inteira e maior ou igual a 1"
