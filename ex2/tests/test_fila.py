@@ -64,3 +64,12 @@ def test_normal_apos_duas_prioridades():
     assert fila.chamar() == "N1"
     assert fila.chamar() == "P3"
     assert fila.aguardando == 0
+
+import pytest
+
+
+def test_chamar_fila_vazia():
+    fila = Fila()
+
+    with pytest.raises(IndexError):
+        fila.chamar()
