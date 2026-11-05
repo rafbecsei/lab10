@@ -31,3 +31,6 @@ def test_palavra_com_hifen():
 
 def test_apenas_pontuacao():
     assert contar_palavras("... !") == {}
+
+def test_pontuacao_inicio_fim():
+    assert contar_palavras(",dia, ;dia;") == {"dia": 2}
