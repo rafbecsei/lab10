@@ -62,3 +62,13 @@ def test_desconto_ao_atingir_minimo():
 
     c.adicionar(5000)
     assert c.total == 9000
+
+def test_segundo_cupom_substitui_primeiro():
+    c = Carrinho()
+    c.adicionar(30000)
+
+    c.aplicar_cupom("DEZ")
+    assert c.total == 27000
+
+    c.aplicar_cupom("VINTE")
+    assert c.total == 24000
