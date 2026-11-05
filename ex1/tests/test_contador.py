@@ -37,3 +37,6 @@ def test_pontuacao_inicio_fim():
 
 def test_outros_sinais_pontuacao():
     assert contar_palavras(":dia: ?dia?") == {"dia": 2}
+
+def test_preserva_letra_x():
+    assert contar_palavras("x dia x") == {"x": 2, "dia": 1}
