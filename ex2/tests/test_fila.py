@@ -23,3 +23,12 @@ def test_primeira_senha_prioritaria():
 
     assert fila.emitir("prioridade") == "P1"
     assert fila.aguardando == 1
+
+def test_numeracao_independente():
+    fila = Fila()
+
+    assert fila.emitir("normal") == "N1"
+    assert fila.emitir("prioridade") == "P1"
+    assert fila.emitir("normal") == "N2"
+    assert fila.emitir("prioridade") == "P2"
+    assert fila.aguardando == 4
