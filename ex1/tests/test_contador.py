@@ -19,3 +19,6 @@ def test_maiusculas_minusculas():
 
 def test_pontuacao_final():
     assert contar_palavras("fim. Fim!") == {"fim": 2}
+
+def test_espacos_multiplos():
+    assert contar_palavras("bom   dia") == {"bom": 1, "dia": 1}
