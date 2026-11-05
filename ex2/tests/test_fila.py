@@ -17,3 +17,9 @@ def test_duas_senhas_normais():
     assert fila.emitir("normal") == "N1"
     assert fila.emitir("normal") == "N2"
     assert fila.aguardando == 2
+
+def test_primeira_senha_prioritaria():
+    fila = Fila()
+
+    assert fila.emitir("prioridade") == "P1"
+    assert fila.aguardando == 1
